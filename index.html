@@ -125,6 +125,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text {
@@ -173,7 +175,7 @@
         @keyframes glow {
             0% { box-shadow: 0 0 10px var(--baby-blue); }
             50% { box-shadow: 0 0 20px var(--baby-blue); }
-            100% { box-shadow: 0 0 10px var(--baby-blue); }
+           100% { box-shadow: 0 0 10px var(--baby-blue); }
         }
 
         .bottle-container {
@@ -261,6 +263,170 @@
             opacity: 0.8;
         }
 
+        /* UV-C Sterilizing Cap Section */
+        .sterilizing-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--baby-blue) 0%, var(--mint-green) 100%);
+        }
+
+        .sterilizing-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sterilizing-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .sterilizing-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .sterilizing-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .sterilizing-features {
+            margin-top: 30px;
+        }
+
+        .sterilizing-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .sterilizing-feature i {
+            width: 30px;
+            height: 30px;
+            background: var(--soft-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--text-dark);
+        }
+
+        .sterilizing-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .sterilizing-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        .uv-light {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #8a2be2;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px #8a2be2;
+            animation: pulse 2s infinite;
+        }
+
+        .uv-light:nth-child(1) {
+            top: 20%;
+            left: 30%;
+        }
+
+        .uv-light:nth-child(2) {
+            top: 50%;
+            left: 60%;
+        }
+
+        .uv-light:nth-child(3) {
+            top: 80%;
+            left: 40%;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        /* Nursing Bottle Caries Section */
+        .caries-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .caries-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .caries-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .caries-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .caries-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .caries-warning {
+            background: var(--soft-pink);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .caries-warning h3 {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .caries-warning ul {
+            margin-left: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .caries-warning li {
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .caries-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .caries-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
         /* Why Choose SafeFeed */
         .why-choose {
             padding: 100px 0;
@@ -318,11 +484,22 @@
         }
 
         .step {
-            flex: 0 0 calc(25% - 30px);
+            flex: 0 0 calc(33.33% - 30px);
             text-align: center;
             margin-bottom: 30px;
             opacity: 0;
             transform: translateY(20px);
+            position: relative;
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
         }
 
         .step-number {
@@ -348,6 +525,21 @@
         .step p {
             color: var(--text-dark);
             opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .step-image {
+            margin: 20px 0;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-image img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
         }
 
         /* Testimonials */
@@ -386,6 +578,8 @@
         .testimonial-author {
             display: flex;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .author-image {
@@ -441,13 +635,52 @@
             margin: 0 auto 20px;
         }
 
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 15px 20px;
             border: none;
             border-radius: 50px;
             font-size: 1rem;
             box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--baby-blue);
+        }
+
+        .modal p {
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .modal .btn {
+            margin: 0 10px;
         }
 
         /* Footer */
@@ -478,6 +711,8 @@
 
         .footer-column ul {
             list-style: none;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-column ul li {
@@ -538,11 +773,11 @@
                 margin-bottom: 40px;
             }
 
-            .why-content {
+            .sterilizing-content, .caries-content, .why-content {
                 flex-direction: column;
             }
 
-            .why-text {
+            .sterilizing-text, .caries-text, .why-text {
                 padding-right: 0;
                 margin-bottom: 40px;
             }
@@ -586,7 +821,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#why-choose">Why SafeFeed</a></li>
+                    <li><a href="#sterilizing">UV-C Sterilizing</a></li>
+                    <li><a href="#caries">Nursing Bottle Caries</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#cta">Pre-order</a></li>
@@ -605,7 +841,7 @@
                 <div class="hero-text">
                     <h1>SafeFeed – Smarter Feeding, Healthier Smiles</h1>
                     <p>The world's first anti-cariogenic infant feeding bottle designed to prevent nursing bottle caries and make feeding easier for parents.</p>
-                    <a href="#cta" class="btn btn-glow">Join Waitlist</a>
+                    <a href="#" class="btn btn-glow" id="join-waitlist-btn">Join Waitlist</a>
                 </div>
                 <div class="bottle-container">
                     <div id="bottle-3d">
@@ -682,24 +918,92 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-music"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Soothing Music System</h3>
-                    <p>Calms baby with gentle lullabies during feeding time.</p>
+                    <h3>Automatic Sterilizing Cap</h3>
+                    <p>UV-C light technology automatically sterilizes the bottle after each use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UV-C Sterilizing Cap Section -->
+    <section class="sterilizing-section" id="sterilizing">
+        <div class="container">
+            <div class="sterilizing-content">
+                <div class="sterilizing-text">
+                    <h2>Automatic Sterilizing Cap with UV-C Technology</h2>
+                    <p>SafeFeed introduces the world's first infant feeding bottle with built-in UV-C sterilization technology. Our innovative cap automatically sterilizes the bottle after each use, eliminating harmful bacteria and ensuring your baby's feeding equipment is always clean and safe.</p>
+                    
+                    <div class="sterilizing-features">
+                        <div class="sterilizing-feature">
+                            <i class="fas fa-check"></i>
+                            <p>UV-C light technology eliminates 99.9% of bacteria and viruses</p>
+                        </div>
+                        <div class="sterilizing-feature">
+                            <i class="fas fa-check"></i>
+                            <p>Automatically activates when cap is closed</p>
+                        </div>
+                        <div class="sterilizing-feature">
+                            <i class="fas fa-check"></i>
+                            <p>Complete sterilization in just 3 minutes</p>
+                        </div>
+                        <div class="sterilizing-feature">
+                            <i class="fas fa-check"></i>
+                            <p>Battery-powered with USB-C rechargeable battery</p>
+                        </div>
+                        <div class="sterilizing-feature">
+                            <i class="fas fa-check"></i>
+                            <p>Safety sensors prevent UV exposure to skin and eyes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sterilizing-image">
+                    <img src="https://placehold.co/600x400/a7d0e8/2c3e50?text=UV-C+Sterilizing+Cap" alt="SafeFeed with UV-C sterilizing cap">
+                    <div class="uv-light"></div>
+                    <div class="uv-light"></div>
+                    <div class="uv-light"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nursing Bottle Caries Section -->
+    <section class="caries-section" id="caries">
+        <div class="container">
+            <div class="caries-content">
+                <div class="caries-text">
+                    <h2>Understanding Nursing Bottle Caries</h2>
+                    <p>Nursing bottle caries (also known as baby bottle tooth decay) is a dental condition that occurs when a child's teeth are frequently exposed to sugary liquids for long periods. This common problem affects infants and toddlers who are regularly put to bed with a bottle or use a bottle as a pacifier.</p>
+                    
+                    <p>The sugars in formula, milk, and juice pool around the teeth and gums, creating an ideal environment for bacteria that produce acid. This acid attacks tooth enamel, leading to decay that typically affects the upper front teeth first but can damage other teeth as well.</p>
+                    
+                    <div class="caries-warning">
+                        <h3>Risk Factors for Nursing Bottle Caries:</h3>
+                        <ul>
+                            <li>Frequent, prolonged feeding with a bottle containing sugary liquids</li>
+                            <li>Putting a child to bed with a bottle</li>
+                            <li>Using a bottle as a pacifier during the day</li>
+                            <li>Not cleaning the baby's teeth after feedings</li>
+                            <li>Extended breastfeeding on demand throughout the night</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="caries-image">
+                    <img src="https://placehold.co/600x400/f8d7da/2c3e50?text=Nursing+Bottle+Caries+Info" alt="Information about nursing bottle caries">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose SafeFeed -->
-    <section class="why-choose" id="why-choose">
+    <section class="why-choose">
         <div class="container">
             <div class="why-content">
                 <div class="why-text">
                     <h2>Why Choose SafeFeed?</h2>
-                    <p>Nursing bottle caries is a common problem that affects infants who are bottle-fed. It occurs when sugary liquids pool around a baby's teeth for extended periods, leading to tooth decay.</p>
-                    <p>SafeFeed's innovative design prevents this issue by incorporating a unique anti-cariogenic system that protects your baby's teeth while they feed.</p>
-                    <p>Our bottle is designed by pediatric dentists and feeding specialists to ensure the highest standards of safety and effectiveness.</p>
+                    <p>SafeFeed's innovative design prevents nursing bottle caries by incorporating a unique anti-cariogenic system that protects your baby's teeth while they feed.</p>
+                    <p>Our bottle is designed by pediatric dentists and feeding specialists to ensure the highest standards of safety and effectiveness. With features like the UV-C sterilizing cap and anti-cariogenic technology, SafeFeed provides comprehensive protection for your baby's oral health.</p>
                 </div>
                 <div class="why-image">
                     <img src="https://placehold.co/600x400/b8e0d2/2c3e50?text=Healthy+Smiles" alt="Healthy baby smile">
@@ -713,28 +1017,56 @@
         <div class="container">
             <div class="section-title">
                 <h2>How SafeFeed Works</h2>
-                <p>Simple steps for healthier feeding</p>
+                <p>Simple steps for healthier feeding and caries prevention</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Fill & Prepare</h3>
-                    <p>Add formula to the dual chamber system and water to the main reservoir</p>
+                    <h3>Add Milk and Water</h3>
+                    <p>Add milk and water separately into the two chambers of the SafeFeed bottle.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/a7d0e8/2c3e50?text=Two+Chambers" alt="Two chambers for milk and water">
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Mix & Cool</h3>
-                    <p>Press the one-tap cooling button to mix and cool to perfect temperature</p>
+                    <h3>Fix the Nipple</h3>
+                    <p>Attach the nipple with two straws, ensuring each straw goes into the correct chamber (milk and water) as indicated.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/c6e6d7/2c3e50?text=Dual+Straws" alt="Nipple with dual straws">
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Monitor</h3>
-                    <p>Check the temperature indicator to ensure ideal feeding conditions</p>
+                    <h3>Start Feeding</h3>
+                    <p>Press the button to begin feeding. The dual chamber system ensures proper mixing during feeding.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/f8d7da/2c3e50?text=Start+Feeding" alt="Start feeding button">
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Feed & Protect</h3>
-                    <p>Feed your baby while the anti-cariogenic system protects their teeth</p>
+                    <h3>Automatic Water Sprays</h3>
+                    <p>During feeding, automatic water sprays periodically cleanse the baby's mouth to prevent sugar pooling.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/a7d0e8/2c3e50?text=Water+Spray" alt="Water spray mechanism">
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Final Rinse</h3>
+                    <p>At the end of feeding, a final water spray ensures complete cleansing, preventing caries-causing bacteria.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/c6e6d7/2c3e50?text=Final+Rinse" alt="Final rinse mechanism">
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Automatic Sterilization</h3>
+                    <p>After feeding, close the cap to activate UV-C sterilization, keeping the bottle clean for next use.</p>
+                    <div class="step-image">
+                        <img src="https://placehold.co/200x120/f8d7da/2c3e50?text=UV+Sterilization" alt="UV sterilization process">
+                    </div>
                 </div>
             </div>
         </div>
@@ -764,7 +1096,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "The one-tap cooling feature is a game changer! No more waiting for the bottle to cool down while my baby is crying from hunger."
+                        "The UV-C sterilizing cap is genius! No more boiling bottles or worrying about sterilization equipment. It's made my life so much easier."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -778,7 +1110,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "As a pediatric dentist, I recommend SafeFeed to all my patients. It's the only bottle on the market that addresses nursing bottle caries effectively."
+                        "As a pediatric dentist, I recommend SafeFeed to all my patients. It's the only bottle on the market that addresses nursing bottle caries effectively while providing sterilization."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -799,14 +1131,84 @@
         <div class="container">
             <h2>Join the Parenting Revolution</h2>
             <p>Be among the first to experience the future of infant feeding. Pre-order now and give your baby the gift of healthier smiles.</p>
-            <form>
+            <form id="preorder-form" action="https://formsubmit.co/saitejachennoju@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New SafeFeed Pre-order!">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#thankyou">
+                <input type="hidden" name="_captcha" value="false">
+                
                 <div class="form-group">
-                    <input type="email" placeholder="Enter your email address" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select name="region" required>
+                        <option value="" disabled selected>Select Your Region</option>
+                        <option value="north-america">North America</option>
+                        <option value="south-america">South America</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="africa">Africa</option>
+                        <option value="oceania">Oceania</option>
+                        <option value="middle-east">Middle East</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-glow">Pre-order Now</button>
             </form>
         </div>
     </section>
+
+    <!-- Waitlist Modal -->
+    <div class="modal" id="waitlist-modal">
+        <div class="modal-content">
+            <h3>Join the SafeFeed Waitlist</h3>
+            <p>Be the first to know when SafeFeed becomes available and get exclusive early-bird offers.</p>
+            <form id="waitlist-form" action="https://formsubmit.co/saitejachennoju@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Waitlist Signup from Homepage">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#thankyou">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select name="region" required>
+                        <option value="" disabled selected>Select Your Region</option>
+                        <option value="north-america">North America</option>
+                        <option value="south-america">South America</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="africa">Africa</option>
+                        <option value="oceania">Oceania</option>
+                        <option value="middle-east">Middle East</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Join Waitlist</button>
+                <button type="button" class="btn" onclick="closeModal()" style="background: var(--light-gray);">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <h3>Thank You!</h3>
+            <p>Your request has been received. We'll contact you shortly with more details.</p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -820,7 +1222,8 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#why-choose">Why SafeFeed</a></li>
+                        <li><a href="#sterilizing">UV-C Sterilizing</a></li>
+                        <li><a href="#caries">Nursing Bottle Caries</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                     </ul>
@@ -954,6 +1357,67 @@
         
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Waitlist button functionality
+        const waitlistModal = document.getElementById('waitlist-modal');
+        const successModal = document.getElementById('success-modal');
+        const joinWaitlistBtn = document.getElementById('join-waitlist-btn');
+        
+        joinWaitlistBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            waitlistModal.style.display = 'flex';
+        });
+
+        function closeModal() {
+            waitlistModal.style.display = 'none';
+            successModal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === waitlistModal || e.target === successModal) {
+                closeModal();
+            }
+        });
+
+        // Form submission handling
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                successModal.style.display = 'flex';
+                waitlistModal.style.display = 'none';
+                
+                // Submit the form data (using FormSubmit.co)
+                // This will work when deployed to a live server
+                this.submit();
+                
+                // Reset form
+                this.reset();
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
